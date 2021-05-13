@@ -18,7 +18,7 @@ SELECT AVG(price) AS [평균구매금액] FROM buyTbl
 
 
 SELECT * FROM userTbl
-Order by height desc
+ Order by height desc
 -- 사용자테이블에서 키가 가장큰사람하고 가장 작은사람
 SELECT name,height FROM userTbl
  WHERE height = (SELECT MAX(height)FROM userTbl)
@@ -55,13 +55,13 @@ SELECT groupName
  GROUP BY ROllup (groupName)
 
  SELECT groupName 
-     , userID
-     , SUM(price * amount) AS '총구매금액' 
-  FROM buyTbl
- GROUP BY Cube (groupName, userID)
+      , userID
+      , SUM(price * amount) AS '총구매금액' 
+   FROM buyTbl
+  GROUP BY Cube (groupName, userID)
 
  SELECT groupName 
       , SUM(price * amount) AS '총구매금액' 
 	  , GROUPING_ID(groupName) AS '추가'
-  FROM buyTbl
- GROUP BY ROllup (groupName)
+   FROM buyTbl
+  GROUP BY ROllup (groupName)
