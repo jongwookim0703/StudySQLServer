@@ -24,3 +24,10 @@
  -- Alter Table userTbl
  -- ADD Constraint CK_birthYear
  -- Check (birthYear > 1900 and birthYear < = Year(GetDate()))  --  2021까지
+
+  --  테이블_스키마
+  Select * From sampleDb.dbo.userTbl
+  Select * From AdventureWorksLT2019.SalesLT.Customer
+  Select * From AdventureWorksLT2019.SalesLT.Address
+  Select * From AdventureWorksLT2019.dbo.BuildVersion
+
